@@ -80,9 +80,27 @@ namespace Market_console_app.Service
             
         }
 
-        public void EditProduct(string productcode)
+        public void EditProduct(string productcode,string newproductcode)
         {
-            throw new NotImplementedException();
+            Product product = Products.Find(s => s.ProductCode == productcode);
+            if (product.ProductCode == productcode)
+            {
+                productcode = newproductcode;
+            }
+            else
+            {
+                throw new NullReferenceException();
+            }
+
+
+
+
+
+
+
+
+
+
         }
 
         public List<Product> ReturnProducts(Category category)
@@ -98,6 +116,27 @@ namespace Market_console_app.Service
         public List<Product> SearchProducts(string productname)
         {
             throw new NotImplementedException();
+        }
+
+        //Additional Methods
+
+        public void RemoveProduct(string productcode)
+        {
+             foreach (Product item in Products)
+                
+                if (item.ProductCode == productcode)
+                {
+                    Products.Remove(item);
+                }
+
+                   
+                
+            
+               
+            
+
+          
+
         }
     }
 }

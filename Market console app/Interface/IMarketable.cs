@@ -22,7 +22,7 @@ namespace Market_console_app.Interface
         List<Order> ReturnValueOrders(double value);
         Order ReturnNoOrder(string orderno);
         void AddProduct(string productname, double productvalue, Category productcategory, int productcount);
-        void EditProduct(string productcode);
+        void EditProduct(string productcode, string newproductcode);
         List<Product> ReturnProducts(Category category);
         List<Product> ReturnValueProducts(double value1, double value2);
         List<Product> SearchProducts(string productname);
