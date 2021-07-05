@@ -26,20 +26,26 @@ namespace Market_console_app.Model
             ProductValue = productvalue;
             ProductCategory = productcategory;
             ProductCount = productcount;
+       
            
 
 
-            ProductCode = productname.Substring(0, 2).Trim() + _Count.ToString();
+            ProductCode = productname.Substring(0, 2).Trim().ToUpper() + _Count.ToString();
 
            
 
 
 
         }
+        public Product(string productname)
+        {
+            ProductName = productname;
+        }
+
 
         public override string ToString()
         {
-            return $"{ ProductName} { ProductValue } {ProductCategory} {ProductCount}";
+            return $"{ ProductName} { ProductValue } {ProductCategory} {ProductCount} { ProductCode}";
         }
 
     }
